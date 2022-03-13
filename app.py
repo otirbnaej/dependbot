@@ -23,6 +23,6 @@ while (True):
    tweet_to_reply = api.search_tweets(q=query)[0]._json['id']
 
    if (tweet_to_reply not in replied_tweets):
-      api.update_status(status='depende', in_reply_to_status_id=tweet_to_reply, auto_populate_reply_metadata=True)
+      api.update_status(status='Depende.', in_reply_to_status_id=tweet_to_reply, auto_populate_reply_metadata=True)
       replied_tweets.append(tweet_to_reply)
       print(replied_tweets)
