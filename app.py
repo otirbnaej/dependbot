@@ -14,6 +14,12 @@ auth = tweepy.OAuth1UserHandler(
 
 api = tweepy.API(auth)
 
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print(tweet.text)
+sseraphini_id = 2313873457
+
+tweet_to_reply = api.user_timeline(user_id=sseraphini_id)[0]._json['id']
+api.update_status(status='depende', in_reply_to_status_id=tweet_to_reply, auto_populate_reply_metadata=True)
+
+
+# public_tweets = api.home_timeline()
+# for tweet in public_tweets:
+#     print(tweet.text)
